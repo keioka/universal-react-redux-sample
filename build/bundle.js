@@ -14584,30 +14584,55 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_Component) {
-	  _inherits(App, _Component);
+	var Header = function (_Component) {
+	  _inherits(Header, _Component);
 
-	  function App() {
-	    _classCallCheck(this, App);
+	  function Header() {
+	    _classCallCheck(this, Header);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
 	  }
 
-	  _createClass(App, [{
+	  _createClass(Header, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log(_header2.default);
 	      return _react2.default.createElement(
 	        'header',
-	        { className: _header2.default.header },
-	        'Hi'
+	        { className: 'header' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header__logo' },
+	          _react2.default.createElement('img', { src: '', alt: '' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header__nav' },
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'header__nav__ul' },
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'header__nav__ul__li' },
+	              'Login or Signup'
+	            ),
+	            _react2.default.createElement('li', { className: 'header__nav__ul__li' }),
+	            _react2.default.createElement('li', { className: 'header__nav__ul__li' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: _header2.default.btn__header },
+	          'Button'
+	        )
 	      );
 	    }
 	  }]);
 
-	  return App;
+	  return Header;
 	}(_react.Component);
 
-	exports.default = App;
+	exports.default = Header;
 
 /***/ },
 /* 135 */
@@ -15816,7 +15841,6 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"header":"header__header___3oG-S"};
 
 /***/ },
 /* 149 */

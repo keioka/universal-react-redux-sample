@@ -1,4 +1,12 @@
-.header__header___3oG-S {
+.btn {
+  color: blue;
+}
+.header {
   width: 100%;
-  background-color: red;
+}
+.header__nav__ul {
+  display: inline;
+}
+.btn__header {
+  color: blue;
 }

@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/server'
 import serialize from 'serialize-javascript'
 import Helmet from 'react-helmet'
 
-import style from './html.less'
-
 class HTML extends Component {
   
   constructor(){
@@ -23,18 +21,13 @@ class HTML extends Component {
           <Helmet
             defaultTitle="My Site"
             titleTemplate="My Site - %s"
-            meta={[
-              {
-                "name": "description",
-                "content": "Content"
-              }
-            ]}
           />
           <link rel="stylesheet" href="build/style.css" />
         </head>
         <body>
           <div id="content" dangerouslySetInnerHTML={{__html: content}}/>
           <script dangerouslySetInnerHTML={{__html: `window.__REDUX_STORE__=${serialize(store.getState())};`}} charSet="UTF-8"/>
+          <script src="http://localhost:5001/webpack-dev-server.js"></script>
           <script src="build/bundle.js"></script>
         </body>
       </html>

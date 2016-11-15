@@ -46,7 +46,7 @@ const debug = require('debug')("App:Server")
 //************************
 // Container & Component
 //************************
-import HTML from '../shared/component/html'
+import HTML from '../shared/component/Html/html'
 
 //************************
 // Routes

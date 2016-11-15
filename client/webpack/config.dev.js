@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var autoprefixer = require('autoprefixer');
 
 var host = 'localhost';
 var port = '7777';
@@ -10,7 +11,7 @@ module.exports = {
   devtool: '#source-map',
   context: path.resolve(__dirname, '..'),
   entry: [
-    './index.js'
+    './index.js',
   ],
   output: {
     path: './build',
@@ -18,7 +19,7 @@ module.exports = {
     publicPath: './build'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', 'less']
   },
   debug: true,
   stats: {
@@ -42,8 +43,11 @@ module.exports = {
       },
       {
         test: /\.less$/, 
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+        loader: ExtractTextPlugin.extract('style', 'css-loader!postcss-loader!less-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]')
       }
     ]
+  },
+  postcss: function(){
+    return [autoprefixer]
   }
 }
